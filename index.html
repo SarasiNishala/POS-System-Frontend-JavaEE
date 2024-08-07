@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">NIKE</a>
+            <ul class="nav-links">
+                <li><a id= "home" href="#Home" aria-current="page">Home</a></li>
+                <li><a id= "item" href="#Item" aria-current="page">Item</a></li>
+                <li><a id="customer" href="#Customer" aria-current="page">Customer</a></li>
+                <li><a id="order" href="#Order" aria-current="page">Order</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <section id="Home"  style="overflow-y: hidden;">
+        <div class="content">
+            <div class="box">
+                <div class="thumb">
+                    IN MOTION WE
+                    FIND FREEDOM 
+                    <br>AND JOY
+                </div>
+                <div class="desc">
+                    Welcome to NIKE, where stylish comfort meets premium quality. Discover your perfect <br> pair today.
+                </div>
+            </div>
+            <div class="shoe" style="top: 50px;">
+                <img src="/assets/shoe.png" alt="shoe">
+            </div>
+        </div>
+    </section>
+
+    <section id="Item">
+        <div class="container">
+            <form id="form-item">
+                <div class="first">
+                    <div class="form-group">
+                        <label for="itemName">Item Name</label>
+                        <input type="text" id="itemName" name="itemName">
+                    </div>
+                    <div class="form-group">
+                        <label id="searchCus" for="itemId">Item Code</label>
+                        <input type="text" id="itemCode" name="itemCode">
+                    </div>
+                    <div class="form-group">
+                        <label for="itemSize">Item Size</label>
+                        <input type="text" id="itemSize" name="itemSize">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="text" id="price" name="price">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="text" id="qty" name="quantity">
+                    </div>
+                </div>
+                <div class="second">
+                    <div class="button-group">
+                        <button id="save-button" type="button" class="btn" onclick="saveItem()">Save</button>
+                        <button id="update-button" type="button" class="btn" onclick="updateItem()">Update</button>
+                        <button id="delete-button" type="button" class="btn" onclick="deleteItem(itemCode.value)">Delete</button>
+                        <button id="btnSearch" type="button" class="btn" onclick="filterItems()">Search</button>
+                        <button id="clear-button" type="button" class="btn" onclick="clearItemFields()">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="table-item">
+            <div class="table-container">
+                <table class="table text-white" id="tblItem">
+                    <thead class="text-white ">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">QTY</th>
+                    </tr>
+                    </thead>
+                    <tbody   id="itemTbody">
+                        <tr></tr>
+                    </tbody>
+                </table>
+            </div>  
+        </div>
+       </section>
+
+    <section id="Customer"></section>
+
+    <section id="Order"></section>
+    
+    <script src="/controller/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</body>
+</html>
