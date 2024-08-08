@@ -92,11 +92,182 @@
                 </table>
             </div>  
         </div>
+    </section>
+
+    <section id="Customer">
+        <div class="container container-customer">
+            <form id="customer-form">
+                <div class="first">
+                    <div class="form-group">
+                        <label for="customerName">Customer Name</label>
+                        <input class="text" type="text" id="customerName" name="customerName">
+                    </div>
+                    <div class="form-group">
+                        <label for="customerId" id="searchCus">Customer Id</label>
+                        <input class="text" type="text" id="customerId" name="customerId">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input class="text" type="text" id="address" name="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input class="text" type="text" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input  class="text-email" type="text-email" id="email" name="email">
+                    </div>
+                </div>
+                <div class="second">
+                    <div class="button-group">
+                        <button id="save-button" type="button" class="btn">Save</button>
+                        <button id="update-button" type="button" class="btn">Update</button>
+                        <button id="delete-button" type="button" class="btn" onclick=" deleteCustomer(customerID)">Delete</button>
+                        <button id="btnSearch" type="button" class="btn" onclick="filterCustomers() ">Search</button>
+                        <button id="clear-button" type="button" class="btn">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+        <div class="table-item">
+            <div class="table-container">
+                <table class="table text-white" id="tblcustomer">
+                    <thead class="text-white ">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Contact</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody  id="customerTbody">
+                        <tr></tr>
+                    </tbody>
+                </table>
+            </div>  
+        </div>
+    </section>
+
+    <section id="Order">
+        <div class="odrContainer">
+            <div class="section">
+                <h2>Order Details</h2>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="order-id">Order Id</label>
+                        <input type="text" id="InputOID">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="customer">Customer</label>
+                        <select id="filterInputCusName" onclick="loadCustomers()">
+                            <option>Select customer name</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-id">Customer Id</label>
+                        <input type="text" id="customer-id">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" id="cus-phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="cus-address">
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input style="width: 297px;" type="text" id="cus-email">
+                    </div>
+            </div>
+            <div class="section">
+                <h2>Item Select</h2>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="item-code">Item name</label>
+                        <select id="filterInputItemName" onclick="loadItems()">
+                            <option>Select item name</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="item-code">Item Code</label>
+                        <input type="text" id="item-code">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="text" id="priceItem">
+                    </div>
+                    <div class="form-group">
+                        <label for="qty-on-hand">Size</label>
+                        <input type="text" id="selectedItemDes">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="qty-on-hand">QtyOnH</label>
+                        <input type="text" id="qty-on-hand">
+                    </div>
+                    <div class="form-group">
+                        <label for="OderQTY">OdrQTY</label>
+                        <input type="text" id="OdrQTY">
+                    </div>
+                </div>
+                <button class="btn-odr" id="btnAddToCart">Add To Cart</button>
+            </div>
+            <div class="section-total">
+                <h2>Total</h2>
+                <div class="form-group">
+                    <label for="cash">Total</label>
+                    <input type="text" id="inputTotal">
+                </div>
+                <div class="form-group">
+                    <label for="discount">Cash</label>
+                    <input type="text" id="inputCash">
+                </div>
+                <div class="form-group">
+                    <label for="balance">Balance</label>
+                    <input type="text" id="balance">
+                </div>
+                <button class="btn-odr" id="btnPurchase">Buy</button>
+            </div>
+        </div>
+        <div class="odr-table">
+            <main id="ord" class="object-fit-contain bg pt-pla-or height-or mt-5">
+                <section class="row  m-auto object-fit-contain">
+                    <table class="table text-white object-fit-contain" id="tableOrder">
+                        <thead class="text-white">
+                        <tr>
+                            <th scope="col">Order ID</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Item QTY</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tblBodyOrders">
+                        <tr></tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
        </section>
-
-    <section id="Customer"></section>
-
-    <section id="Order"></section>
     
     <script src="/controller/index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
